@@ -25,6 +25,7 @@ defmodule InfoSys do
     |> write_results_to_cache(query, opts)
     |> Kernel.++(cached_results)
     |> Enum.sort(&(&1.score >= &2.score))
+    |> IO.inspect()
     |> Enum.take(opts[:limit])
   end
 
